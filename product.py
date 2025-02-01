@@ -37,5 +37,9 @@ class Product:
     def buy(self, quantity) -> float:
         if  quantity < 0:
             raise ValueError("Invalid quantity. Value needs to be positive")
+        if quantity > self.quantity:
+            raise ValueError("We don't have the entered quantity in stock.")
         self.quantity -= quantity
+        if self.quantity == 0:
+            self.deactivate()
         return quantity * self.price
