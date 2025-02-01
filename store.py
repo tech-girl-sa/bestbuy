@@ -3,6 +3,7 @@ from typing import List
 from product import Product
 
 
+
 class Store:
     def __init__(self, products):
         self.products = products
